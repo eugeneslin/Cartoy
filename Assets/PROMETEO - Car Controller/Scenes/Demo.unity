@@ -4261,7 +4261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 627556911, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
       propertyPath: maxSpeed
-      value: 120
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 627556911, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
       propertyPath: useSounds
