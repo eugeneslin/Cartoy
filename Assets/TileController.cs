@@ -35,7 +35,7 @@ public class TileController : MonoBehaviour
             obj.GetComponent<MeshCollider>().enabled = false;
             Rigidbody rb = obj.GetComponent<Rigidbody>();
             rb.angularVelocity = Random.insideUnitSphere * 100;
-            rb.AddExplosionForce(500, transform.position, 500, 10);
+            rb.AddExplosionForce(Random.Range(100, 400), transform.position, Random.Range(500, 1000), 0);
             Destroy(obj, Random.Range(3.0f, 5.0f));
             offset.x += spacing;
             if (offset.x > spacing * 1.5f)
