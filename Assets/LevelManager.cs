@@ -22,7 +22,7 @@ public class LevelManager : MonoBehaviour
 
         int tilesCleared = TileManager.Instance.tilesTotal - TileManager.Instance.tilesRemaining;
         double percentage = 100f * (double)tilesCleared / (double)TileManager.Instance.tilesTotal;
-        if(percentage > 10f)
+        if(percentage > 50f)
         {
             // Zoom out camera
             Transform cameraTransform = Camera.main.gameObject.transform; //Find main camera which is part of the scene instead of the prefab
