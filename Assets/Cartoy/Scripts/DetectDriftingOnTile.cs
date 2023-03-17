@@ -36,7 +36,7 @@ public class DetectDriftingOnTile : MonoBehaviour
         PrometeoCarController prometeoCarController = GetComponentInParent<PrometeoCarController>();
         isDrifting = prometeoCarController.isDrifting;
 
-        if (isOnPanel && isDrifting)
+        if (panel != null && isOnPanel && isDrifting)
         {
             panel.GetComponent<TileController>().DoDriftDamage();
         }

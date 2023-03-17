@@ -57,7 +57,10 @@ public class TileManager : MonoBehaviour
     IEnumerator ExplodeTile(TileController tile, float delay)
     {
         yield return new WaitForSeconds(delay);
-        tile.Explode();
+        if (tile != null)
+        {
+            tile.Explode();
+        }
     }
 
 }
