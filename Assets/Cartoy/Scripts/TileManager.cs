@@ -2,9 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreateTilePrefabs : MonoBehaviour
+public class TileManager : MonoBehaviour
 {
     public GameObject TilePrefab;
+    public int tilesRemaining;
+    public int tilesTotal;
+
+    private static TileManager instance;
+
+    public static TileManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<TileManager>();
+            }
+            return instance;
+        }
+    }
 
     void Start()
     {
@@ -22,7 +38,9 @@ public class CreateTilePrefabs : MonoBehaviour
             {
                 Vector3 pos = new Vector3(x * tileSpacingX, 0, z * tileSpacingZ);
                 GameObject tile = Instantiate(TilePrefab, center + pos, Quaternion.identity);
+                tilesRemaining++;
             }
         }
+        tilesTotal = tilesRemaining;
     }
 }

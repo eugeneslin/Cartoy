@@ -47,6 +47,7 @@ public class TileController : MonoBehaviour
             }
         }
         Destroy(gameObject);
+        TileManager.Instance.tilesRemaining--;
     }
 
     // Update is called once per frame
