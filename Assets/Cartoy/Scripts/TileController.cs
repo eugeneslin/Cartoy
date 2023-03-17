@@ -21,7 +21,7 @@ public class TileController : MonoBehaviour
     public float speed = 1.0f;
     public float fadeTime = 3.0f;
 
-    void Explode()
+    public void Explode()
     {
         Vector3 size = gameObject.transform.localScale;
         float spacing = 0.5f * Mathf.Max(size.x, size.y, size.z);

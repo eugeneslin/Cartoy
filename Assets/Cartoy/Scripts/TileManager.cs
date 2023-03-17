@@ -43,4 +43,21 @@ public class TileManager : MonoBehaviour
         }
         tilesTotal = tilesRemaining;
     }
+
+    public void BlowUpAllTiles()
+    {
+        TileController[] tiles = FindObjectsOfType<TileController>();
+        foreach (TileController tile in tiles)
+        {
+            float delay = Random.Range(0f, 5f);
+            StartCoroutine(ExplodeTile(tile, delay));
+        }
+    }
+
+    IEnumerator ExplodeTile(TileController tile, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        tile.Explode();
+    }
+
 }
