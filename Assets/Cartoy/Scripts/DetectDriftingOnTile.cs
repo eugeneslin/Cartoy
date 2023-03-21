@@ -38,7 +38,7 @@ public class DetectDriftingOnTile : MonoBehaviour
 
         if (panel != null && isOnPanel && isDrifting)
         {
-            panel.GetComponent<TileController>().DoDriftDamage();
+           //panel.GetComponent<TileController>().DoDriftDamage();
         }
     }
 }
