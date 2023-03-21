@@ -5,6 +5,8 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour {
 
 	public Transform carTransform;
+	public PrometeoCarController carController;
+
 	[Range(1, 10)]
 	public float followSpeed = 2;
 	[Range(1, 10)]
@@ -21,14 +23,17 @@ public class CameraFollow : MonoBehaviour {
 
 	void FixedUpdate()
 	{
+		Vector3 target = carTransform.position + carTransform.forward * carController.localVelocityZ;
+
 		//Look at car
-		Vector3 _lookDirection = (new Vector3(carTransform.position.x, carTransform.position.y, carTransform.position.z)) - transform.position;
+		Vector3 _lookDirection = target - transform.position;
 		Quaternion _rot = Quaternion.LookRotation(_lookDirection, Vector3.up);
 		transform.rotation = Quaternion.Lerp(transform.rotation, _rot, lookSpeed * Time.deltaTime);
 
 		//Move to car
 		Vector3 _targetPos = absoluteInitCameraPosition + carTransform.transform.position;
 		transform.position = Vector3.Lerp(transform.position, _targetPos, followSpeed * Time.deltaTime);
+
 
 	}
 

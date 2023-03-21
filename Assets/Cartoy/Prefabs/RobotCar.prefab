@@ -922,7 +922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  maxSpeed: 90
+  maxSpeed: 60
   maxReverseSpeed: 45
   accelerationMultiplier: 9
   maxSteeringAngle: 27
