@@ -34,7 +34,9 @@ public class CameraFollow : MonoBehaviour {
 		Vector3 _targetPos = absoluteInitCameraPosition + carTransform.transform.position;
 		transform.position = Vector3.Lerp(transform.position, _targetPos, followSpeed * Time.deltaTime);
 
-
+		// HERE
+		// Zoom the camera out if the car isn't in the viewport.
+		// Otherwise, restore camera zoom to its original level.
 	}
 
 }
